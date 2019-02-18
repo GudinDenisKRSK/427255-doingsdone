@@ -19,64 +19,64 @@
     </div>
     <table class="tasks">
         <?php foreach ($tasks_info_mass as $key => $value): ?>
-            <?php if (($value['success'] == 'Да') & ($show_complete_tasks) == 1): ?>
+            <?php if (($value['success'] == true) & ($show_complete_tasks) == 1): ?>
                 <tr class="tasks__item task task--completed">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"> <?= esc($value['task']); ?> </span>
+                        <span class="checkbox__text"> <?= htmlspecialchars($value['task']); ?> </span>
                     </label>
                 </td>
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"><?= esc($value['date_complite']); ?></span>
+                        <span class="checkbox__text"><?= htmlspecialchars($value['date_complite']); ?></span>
                     </label>
                 </td>
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"><?= esc($value['categories']); ?></span>
+                        <span class="checkbox__text"><?= htmlspecialchars($value['categories']); ?></span>
                     </label>
                 </td>
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"><?= esc($value['success']); ?></span>
+                        <span class="checkbox__text"><? echo ('Да'); ?></span>
                     </label>
                 </td>
-            <?php elseif ($value['success'] == 'Нет'): ?>
+            <?php elseif ($value['success'] == false): ?>
                 <tr class="tasks__item task ">
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                    value="1">
-                            <span class="checkbox__text"> <?= esc($value['task']); ?> </span>
+                            <span class="checkbox__text"> <?= htmlspecialchars($value['task']); ?> </span>
                         </label>
                     </td>
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                    value="1">
-                            <span class="checkbox__text"><?= esc($value['date_complite']); ?></span>
+                            <span class="checkbox__text"><?= htmlspecialchars($value['date_complite']); ?></span>
                         </label>
                     </td>
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                    value="1">
-                            <span class="checkbox__text"><?= esc($value['categories']); ?></span>
+                            <span class="checkbox__text"><?= htmlspecialchars($value['categories']); ?></span>
                         </label>
                     </td>
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                    value="1">
-                            <span class="checkbox__text"><?= esc($value['success']); ?></span>
+                            <span class="checkbox__text"><? echo('Нет'); ?></span>
                         </label>
                     </td>
                 </tr>

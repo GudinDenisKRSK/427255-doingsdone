@@ -36,7 +36,7 @@
                 <nav class="main-navigation">
                     <ul class="main-navigation__list">
                         <li class="main-navigation__list-item">
-                            <a class="main-navigation__list-item-link" href="#"><?= esc($value)  ?></a>
+                            <a class="main-navigation__list-item-link" href="#"><?= htmlspecialchars($value)  ?></a>
                             <span class="main-navigation__list-item-count"><?php print(get_item_count($tasks_info_mass,$project_massive[$key])) ?></span>
                         </li>
                     </ul>

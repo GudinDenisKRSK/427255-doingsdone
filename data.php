@@ -5,44 +5,43 @@ $tasks_info_mass = [
         'task' => 'Собеседование в IT компании',
         'date_complite' => '01.12.2019',
         'categories' => 'Работа',
-        'success' => 'Нет'
+        'success' => false
     ],
 
     [
         'task' => 'Выполнить тестовое задание',
         'date_complite' => '25.12.2019',
         'categories' => 'Работа',
-        'success' => 'Нет'
+        'success' => false
     ],
 
     [
         'task' => 'Сделать задание первого раздела',
         'date_complite' => '21.12.2019',
         'categories' => 'Учеба',
-        'success' => 'Да'
+        'success' => true
     ],
 
     [
         'task' => 'Встреча с другом',
         'date_complite' => '22.12.2019',
         'categories' => 'Входящие',
-        'success' => 'Нет'
+        'success' => false
     ],
 
     [
         'task' => 'Купить корм для кота',
         'date_complite' => 'Нет',
         'categories' => 'Домашние дела',
-        'success' => 'Нет'
+        'success' => false
     ],
 
     [
         'task' => 'Заказать пиццу',
         'date_complite' => 'Нет',
         'categories' => 'Домашние дела',
-        'success' => 'Нет'
+        'success' => false
     ]
 
 ];
-
 $show_complete_tasks = rand(0, 1);
