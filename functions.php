@@ -25,8 +25,3 @@ function get_item_count ($tasks_info_mass,$project) {
     }
     return $count;
 }
-
-function esc ($str) {
-    $text = htmlspecialchars($str);
-    return $text;
-}
