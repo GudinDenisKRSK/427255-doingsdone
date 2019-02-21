@@ -39,3 +39,4 @@ function deadline ($date_comp) {
     $date_diff = $date_end - $date_now;
     return $date_diff;
 }
+
