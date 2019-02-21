@@ -26,7 +26,16 @@ function get_item_count ($tasks_info_mass,$project) {
     return $count;
 }
 
-function esc ($str) {
-    $text = htmlspecialchars($str);
-    return $text;
+function deadline ($date_comp) {
+    $result ='';
+    date_default_timezone_set('Asia/Krasnoyarsk');
+    $date_now = time();
+    $date_end = strtotime($date_comp);
+    if ((bool)$date_end == false) {
+        return $result;
+    }
+    $date_end = floor ($date_end/3600);
+    $date_now = floor ($date_now/3600);
+    $date_diff = $date_end - $date_now;
+    return $date_diff;
 }
