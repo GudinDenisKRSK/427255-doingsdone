@@ -20,19 +20,23 @@
     <table class="tasks">
         <?php foreach ($tasks_info_mass as $key => $value): ?>
             <?php if (($value['success'] == true) & ($show_complete_tasks) == 1): ?>
-                <tr class="tasks__item task task--completed">
+                <?php if (deadline ($value['date_complite']) <= 24): ?>
+                <tr class="tasks__item task task--completed task--important">
+                <?php else: ?>
+                    <tr class="tasks__item task task--completed">
+                <?php endif; ?>
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"> <?= htmlspecialchars($value['task']); ?> </span>
+                        <span class="checkbox__text "> <?= htmlspecialchars($value['task']);?> </span>
                     </label>
                 </td>
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"><?= htmlspecialchars($value['date_complite']); ?></span>
+                        <span class="checkbox__text "><?= htmlspecialchars($value['date_complite']);?></span>
                     </label>
                 </td>
                 <td class="task__select">
@@ -50,7 +54,11 @@
                     </label>
                 </td>
             <?php elseif ($value['success'] == false): ?>
-                <tr class="tasks__item task ">
+                <?php if (deadline ($value['date_complite']) <= 24): ?>
+                    <tr class="tasks__item task task--important">
+                <?php else: ?>
+                    <tr class="tasks__item task">
+                <?php endif; ?>
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
