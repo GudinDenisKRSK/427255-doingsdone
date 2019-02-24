@@ -5,29 +5,29 @@ CREATE DATABASE doingsdone
 USE doingsdone;
 
 create table Project (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	project_name VARCHAR(128),
-	user_id INT NOT NULL
+	user_id INT UNSIGNED NOT NULL
 );
 
 create table Task (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	task_name CHAR(128) NOT NULL,
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	task_name VARCHAR(128) NOT NULL,
 	create_at DATETIME DEFAULT NOW(),
-	deadline DATETIME,
+	Deadline_at DATETIME,
 	done_at DATETIME,
 	file_task VARCHAR(128),
-	project_id INT,
-	user_id INT NOT NULL,
+	project_id INT UNSIGNED NOT NULL,
+	user_id INT UNSIGNED NOT NULL,
 	status BOOLEAN DEFAULT FALSE
 );
 
 create table User (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	name_user VARCHAR(128) NOT NULL,
 	email VARCHAR(128) NOT NULL ,
-	password CHAR(64) NOT NULL,
-	reg_date DATETIME NOT NULL DEFAULT NOW()
+	password VARCHAR(255) NOT NULL,
+	Register_at DATETIME NOT NULL DEFAULT NOW()
 );
 
 CREATE UNIQUE INDEX email ON User(email);
