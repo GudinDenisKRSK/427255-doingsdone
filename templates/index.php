@@ -19,8 +19,8 @@
     </div>
     <table class="tasks">
         <?php foreach ($tasks_info_mass as $key => $value): ?>
-            <?php if (($value['success'] == true) & ($show_complete_tasks) == 1): ?>
-                <?php if (deadline ($value['date_complite']) <= 24): ?>
+            <?php if (($value['status'] == true) & ($show_complete_tasks) == 1): ?>
+                <?php if (deadline ($value['done_at']) <= 24): ?>
                 <tr class="tasks__item task task--completed task--important">
                 <?php else: ?>
                     <tr class="tasks__item task task--completed">
@@ -29,21 +29,21 @@
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text "> <?= htmlspecialchars($value['task']);?> </span>
+                        <span class="checkbox__text "> <?= htmlspecialchars($value['task_name']);?> </span>
                     </label>
                 </td>
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text "><?= htmlspecialchars($value['date_complite']);?></span>
+                        <span class="checkbox__text "><?= htmlspecialchars($value['done_at']);?></span>
                     </label>
                 </td>
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                value="1">
-                        <span class="checkbox__text"><?= htmlspecialchars($value['categories']); ?></span>
+                        <span class="checkbox__text"><?= htmlspecialchars($value['project']); ?></span>
                     </label>
                 </td>
                 <td class="task__select">
@@ -53,8 +53,8 @@
                         <span class="checkbox__text"><? echo ('Да'); ?></span>
                     </label>
                 </td>
-            <?php elseif ($value['success'] == false): ?>
-                <?php if (deadline ($value['date_complite']) <= 24): ?>
+            <?php elseif ($value['status'] == false): ?>
+                <?php if (deadline ($value['done_at']) <= 24): ?>
                     <tr class="tasks__item task task--important">
                 <?php else: ?>
                     <tr class="tasks__item task">
@@ -63,21 +63,21 @@
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                    value="1">
-                            <span class="checkbox__text"> <?= htmlspecialchars($value['task']); ?> </span>
+                            <span class="checkbox__text"> <?= htmlspecialchars($value['task_name']); ?> </span>
                         </label>
                     </td>
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                    value="1">
-                            <span class="checkbox__text"><?= htmlspecialchars($value['date_complite']); ?></span>
+                            <span class="checkbox__text"><?= htmlspecialchars($value['done_at']); ?></span>
                         </label>
                     </td>
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                    value="1">
-                            <span class="checkbox__text"><?= htmlspecialchars($value['categories']); ?></span>
+                            <span class="checkbox__text"><?= htmlspecialchars($value['project']); ?></span>
                         </label>
                     </td>
                     <td class="task__select">
