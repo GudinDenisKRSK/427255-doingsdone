@@ -32,12 +32,12 @@
         <div class="content">
             <section class="content__side">
                 <h2 class="content__side-heading">Проекты</h2>
-                <?php foreach ($project_massive as $key => $value): ?>
+                <?php foreach ($project_massive as $key): ?>
                 <nav class="main-navigation">
                     <ul class="main-navigation__list">
                         <li class="main-navigation__list-item">
-                            <a class="main-navigation__list-item-link" href="#"><?= htmlspecialchars($value)  ?></a>
-                            <span class="main-navigation__list-item-count"><?php print(get_item_count($tasks_info_mass,$project_massive[$key])) ?></span>
+                            <a class="main-navigation__list-item-link" href="#"><?= htmlspecialchars($key['project_name'])  ?></a>
+                            <span class="main-navigation__list-item-count"><?php print(get_item_count($tasks_info_mass,$key['project_name'])) ?></span>
                         </li>
                     </ul>
                     <?php endforeach;?>

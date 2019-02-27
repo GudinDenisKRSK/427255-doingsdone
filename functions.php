@@ -18,8 +18,8 @@ function include_template($name, $data) {
 
 function get_item_count ($tasks_info_mass,$project) {
     $count = 0;
-    foreach ($tasks_info_mass as $key => $val){
-        if ($val['categories']==$project){
+    foreach ($tasks_info_mass as $key ){
+        if ($key['project']==$project){
             $count++;
         }
     }

@@ -1,5 +1,5 @@
 <?php
-$project_massive = ["Входящие", "Учеба", "Работа", "Домашние дела", "Авто"];
+/* $project_massive = ["Входящие", "Учеба", "Работа", "Домашние дела", "Авто"];
 $tasks_info_mass = [
     [
         'task' => 'Собеседование в IT компании',
@@ -43,5 +43,5 @@ $tasks_info_mass = [
         'success' => false
     ]
 
-];
+];*/
 $show_complete_tasks = rand(0, 1);
