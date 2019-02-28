@@ -29,9 +29,20 @@ else {
 require_once ('functions.php');
 require_once ('data.php');
 
+$filters_categories =  '';
+if (isset($_GET['filter'])) {
+    $filters_categories = $_GET['filter'];
+    if (!in_array($filters_categories, $tasks_info_mass)) {
+        http_response_code(404);
+    }
+}
+
+$db_tasks = db_fetch_data($connect, $sql);
+
 $page_content = include_template('index.php', [
         'tasks_info_mass' => $tasks_info_mass,
-        'show_complete_tasks' => $show_complete_tasks
+        'show_complete_tasks' => $show_complete_tasks,
+        'filters_categories' => $filters_categories
     ]);
 $layout_content = include_template('layout.php', [
         'content' => $page_content,
