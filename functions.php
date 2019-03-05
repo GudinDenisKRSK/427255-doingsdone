@@ -79,3 +79,41 @@ function db_get_prepare_stmt($link, $sql, $data = [])
     return $stmt;
 }
 
+
+function check_date_format($date) {
+    $result = false;
+    $regexp = '/(\d{2})\.(\d{2})\.(\d{4})/m';
+    if (preg_match($regexp, $date, $parts) && count($parts) == 4) {
+        $result = checkdate($parts[2], $parts[1], $parts[3]);
+    }
+    return $result;
+}
+//  Функция для очистки данных от HTML и PHP тегов
+function clean($value = "") {
+    $value = trim($value);
+    $value = stripslashes($value);
+    $value = strip_tags($value);
+    $value = htmlspecialchars($value);
+    return $value;
+}
+//Функция для проверки длинны строки
+function check_length($value = "", $min, $max) {
+    $result = (mb_strlen($value) < $min || mb_strlen($value) > $max);
+    return !$result;
+}
+function text_clean($text) {
+    $text = trim($text);
+    $text = strip_tags($text);
+    $text = htmlspecialchars($text);
+    $text = stripslashes($text);
+    return $text;
+}
+function db_insert_data($connect, $sql, $data = []) {
+    $stmt = db_get_prepare_stmt($connect, $sql, $data);
+    $result = mysqli_stmt_execute($stmt);
+    if ($result) {
+        $result = mysqli_insert_id($connect);
+    }
+    return $result;
+}
+

@@ -19,8 +19,8 @@
     </div>
     <table class="tasks">
         <?php foreach ($tasks_info_mass as $key => $value): ?>
-            <?php if ((!$value["status"] or ($show_complete_tasks === 1))
-                and ($filters_categories === '' or $filters_categories === $value['project'])): ?>
+            <?php if ((!$value["status"] || ($show_complete_tasks === 1))
+                and ($filters_categories === '' || $filters_categories === $value['project'])): ?>
                 <?php if (deadline ($value['done_at']) <= 24): ?>
                 <tr class="tasks__item task task--completed task--important">
                 <?php else: ?>
@@ -54,7 +54,7 @@
                         <span class="checkbox__text"><? echo ('Да'); ?></span>
                     </label>
                 </td>
-            <?php elseif (($value['status'] == false) and (($filters_categories === '') or ($filters_categories === $value['project']))): ?>
+            <?php elseif (($value['status'] == false) && (($filters_categories === '') || ($filters_categories === $value['project']))): ?>
                 <?php if (deadline ($value['done_at']) <= 24): ?>
                     <tr class="tasks__item task task--important">
                 <?php else: ?>
